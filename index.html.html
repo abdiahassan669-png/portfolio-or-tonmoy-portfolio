@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdia Hassan Tonmoy | Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Inter & Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#1C2541',
+                            900: '#0B132B',
+                        },
+                        brand: {
+                            blue: '#3A86FF',
+                            accent: '#4CC9F0',
+                            light: '#F8F9FA'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .dark .glass {
+            background: rgba(11, 19, 43, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #3A86FF 0%, #4CC9F0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .custom-shadow {
+            box-shadow: 0 10px 30px -10px rgba(58, 134, 255, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-navy-900 text-gray-800 dark:text-gray-100 font-sans transition-colors duration-300 antialiased selection:bg-brand-blue selection:text-white">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-200/50 dark:border-gray-800/50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-blue to-brand-accent flex items-center justify-center text-white font-heading font-bold text-xl shadow-md group-hover:scale-105 transition-transform duration-300">
+                    AT
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-heading font-bold text-lg leading-tight text-navy-900 dark:text-white group-hover:text-brand-blue dark:group-hover:text-brand-accent transition-colors">
+                        Abdia Hassan
+                    </span>
+                    <span class="text-xs text-gray-500 dark:text-gray-400 font-medium tracking-wide">
+                        Tonmoy
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden lg:flex items-center space-x-8 font-medium text-sm text-gray-600 dark:text-gray-300">
+                <a href="#about" class="hover:text-brand-blue dark:hover:text-brand-accent transition-colors py-1">About</a>
+                <a href="#education" class="hover:text-brand-blue dark:hover:text-brand-accent transition-colors py-1">Education</a>
+                <a href="#skills" class="hover:text-brand-blue dark:hover:text-brand-accent transition-colors py-1">Skills</a>
+                <a href="#experience" class="hover:text-brand-blue dark:hover:text-brand-accent transition-colors py-1">Experience</a>
+                <a href="#projects" class="hover:text-brand-blue dark:hover:text-brand-accent transition-colors py-1">Projects</a>
+                <a href="#whyme" class="hover:text-brand-blue dark:hover:text-brand-accent transition-colors py-1">Why Me</a>
+                <a href="#contact" class="hover:text-brand-blue dark:hover:text-brand-accent transition-colors py-1">Contact</a>
+            </nav>
+
+            <!-- Actions (Dark Toggle + CTA) -->
+            <div class="hidden sm:flex items-center space-x-4">
+                <!-- Dark Mode Toggle Button -->
+                <button id="themeToggle" aria-label="Toggle Dark Mode" class="p-2.5 rounded-xl bg-gray-100 dark:bg-navy-800 text-gray-600 dark:text-gray-300 hover:text-brand-blue dark:hover:text-brand-accent transition-colors focus:outline-none focus:ring-2 focus:ring-brand-blue">
+                    <i class="fa-solid fa-moon dark:hidden text-lg"></i>
+                    <i class="fa-solid fa-sun hidden dark:block text-lg text-amber-400"></i>
+                </button>
+
+                <a href="#contact" class="px-5 py-2.5 rounded-xl bg-brand-blue hover:bg-blue-600 text-white font-medium text-sm transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-brand-blue/30 active:scale-95 inline-flex items-center space-x-2">
+                    <span>Get in Touch</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <div class="flex items-center space-x-3 lg:hidden">
+                <button id="themeToggleMobile" aria-label="Toggle Dark Mode" class="p-2 rounded-lg bg-gray-100 dark:bg-navy-800 text-gray-600 dark:text-gray-300">
+                    <i class="fa-solid fa-moon dark:hidden"></i>
+                    <i class="fa-solid fa-sun hidden dark:block text-amber-400"></i>
+                </button>
+                <button id="mobileMenuBtn" aria-label="Open Navigation Menu" class="p-2 rounded-xl text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-navy-800 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden border-b border-gray-200 dark:border-gray-800 bg-white/95 dark:bg-navy-900/95 backdrop-blur-lg px-4 pt-2 pb-6 space-y-3 shadow-xl">
+            <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-blue/10 hover:text-brand-blue">About</a>
+            <a href="#education" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-blue/10 hover:text-brand-blue">Education</a>
+            <a href="#skills" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-blue/10 hover:text-brand-blue">Skills</a>
+            <a href="#experience" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-blue/10 hover:text-brand-blue">Experience</a>
+            <a href="#projects" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-blue/10 hover:text-brand-blue">Projects</a>
+            <a href="#whyme" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-blue/10 hover:text-brand-blue">Why Me</a>
+            <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-blue/10 hover:text-brand-blue">Contact</a>
+            <div class="pt-2">
+                <a href="#contact" class="mobile-nav-link w-full flex justify-center items-center space-x-2 px-4 py-3 rounded-xl bg-brand-blue text-white font-medium shadow-md">
+                    <span>Contact Me</span>
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
+        <!-- Subtle Ambient Background Glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-brand-blue/15 dark:bg-brand-blue/20 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-72 h-72 bg-brand-accent/15 dark:bg-brand-accent/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Left Text Content -->
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-brand-blue/10 border border-brand-blue/20 text-brand-blue dark:text-brand-accent text-sm font-semibold tracking-wide">
+                        <span class="w-2 h-2 rounded-full bg-brand-blue animate-pulse"></span>
+                        <span>Management & Business Reporting Specialist</span>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-navy-900 dark:text-white leading-tight tracking-tight">
+                            Hi, I am <br class="hidden sm:inline" />
+                            <span class="gradient-text">Abdia Hassan Tonmoy</span>
+                        </h1>
+                        <p class="text-lg sm:text-xl font-heading font-semibold text-gray-700 dark:text-gray-300">
+                            BBA Honours Student | Management | Excel & Business Reporting
+                        </p>
+                    </div>
+
+                    <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl leading-relaxed mx-auto lg:mx-0">
+                        "I am a motivated Management student with practical experience in computer applications, Microsoft Office, Excel-based reporting, and business-related work. I am interested in developing professional skills and creating efficient digital solutions using spreadsheets and modern technology."
+                    </p>
+
+                    <!-- CTA Buttons Grid -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#about" class="px-6 py-3.5 rounded-xl bg-navy-800 dark:bg-gray-800 text-white hover:bg-navy-900 dark:hover:bg-gray-700 font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 flex items-center space-x-2">
+                            <i class="fa-regular fa-user text-brand-accent"></i>
+                            <span>About Me</span>
+                        </a>
+                        <a href="#skills" class="px-6 py-3.5 rounded-xl bg-white dark:bg-navy-800 text-gray-800 dark:text-gray-100 border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-accent font-semibold text-sm transition-all duration-300 shadow-sm hover:shadow-md active:scale-95 flex items-center space-x-2">
+                            <i class="fa-solid fa-chart-pie text-brand-blue"></i>
+                            <span>My Skills</span>
+                        </a>
+                        <a href="#projects" class="px-6 py-3.5 rounded-xl bg-brand-blue hover:bg-blue-600 text-white font-semibold text-sm transition-all duration-300 shadow-lg shadow-brand-blue/25 hover:shadow-xl hover:shadow-brand-blue/40 active:scale-95 flex items-center space-x-2">
+                            <i class="fa-solid fa-diagram-project"></i>
+                            <span>My Projects</span>
+                        </a>
+                        <a href="#contact" class="px-6 py-3.5 rounded-xl bg-transparent hover:bg-gray-100 dark:hover:bg-navy-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-700 font-semibold text-sm transition-all duration-300 active:scale-95 flex items-center space-x-2">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>Contact Me</span>
+                        </a>
+                    </div>
+
+                    <!-- Quick Location/Status Banner -->
+                    <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-gray-500 dark:text-gray-400">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-location-dot text-brand-blue"></i>
+                            <span>Bangladesh</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-briefcase text-brand-blue"></i>
+                            <span>Available for Opportunities</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Representation / Avatar Badge Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Decorative Frame Shapes -->
+                        <div class="absolute -inset-1.5 bg-gradient-to-r from-brand-blue to-brand-accent rounded-3xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+                        
+                        <div class="relative bg-white dark:bg-navy-800 rounded-3xl p-8 shadow-2xl border border-gray-100 dark:border-gray-700/60 text-center space-y-6">
+                            
+                            <!-- Profile SVG Graphic / Badge -->
+                            <div class="relative mx-auto w-36 h-36 rounded-2xl bg-gradient-to-tr from-navy-800 to-navy-900 dark:from-navy-900 dark:to-gray-800 p-1 flex items-center justify-center shadow-inner">
+                                <div class="w-full h-full rounded-xl bg-gray-900 flex flex-col items-center justify-center text-white relative overflow-hidden">
+                                    <i class="fa-solid fa-user-tie text-5xl text-brand-accent mb-1"></i>
+                                    <span class="text-xs font-mono text-gray-400 uppercase tracking-widest">AHT Profile</span>
+                                </div>
+                                <div class="absolute -bottom-2 -right-2 bg-brand-blue text-white p-2 rounded-xl shadow-lg text-sm">
+                                    <i class="fa-solid fa-award"></i>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <h2 class="text-xl font-heading font-bold text-navy-900 dark:text-white">
+                                    Abdia Hassan Tonmoy
+                                </h2>
+                                <p class="text-xs font-semibold text-brand-blue dark:text-brand-accent uppercase tracking-wider">
+                                    Management Scholar & Analyst
+                                </p>
+                            </div>
+
+                            <!-- Highlights Mini List -->
+                            <div class="space-y-3 pt-2 text-left border-t border-gray-100 dark:border-gray-700">
+                                <div class="flex items-center justify-between text-xs sm:text-sm">
+                                    <span class="text-gray-500 dark:text-gray-400 flex items-center gap-2">
+                                        <i class="fa-solid fa-graduation-cap text-brand-blue"></i> Education
+                                    </span>
+                                    <span class="font-medium text-gray-800 dark:text-gray-200">BBA Honours (Mgmt)</span>
+                                </div>
+                                <div class="flex items-center justify-between text-xs sm:text-sm">
+                                    <span class="text-gray-500 dark:text-gray-400 flex items-center gap-2">
+                                        <i class="fa-solid fa-file-excel text-emerald-500"></i> Core Competency
+                                    </span>
+                                    <span class="font-medium text-gray-800 dark:text-gray-200">Advanced Excel & Reports</span>
+                                </div>
+                                <div class="flex items-center justify-between text-xs sm:text-sm">
+                                    <span class="text-gray-500 dark:text-gray-400 flex items-center gap-2">
+                                        <i class="fa-solid fa-building text-indigo-500"></i> Professional Role
+                                    </span>
+                                    <span class="font-medium text-gray-800 dark:text-gray-200">Senior Officer (Acct.)</span>
+                                </div>
+                            </div>
+
+                            <!-- Quick Download CTA -->
+                            <div class="pt-2">
+                                <a href="#contact" class="w-full py-2.5 px-4 rounded-xl bg-gray-100 dark:bg-navy-900 hover:bg-brand-blue hover:text-white dark:hover:bg-brand-blue text-xs font-semibold text-gray-700 dark:text-gray-300 transition-colors flex items-center justify-center space-x-2">
+                                    <i class="fa-solid fa-handshake"></i>
+                                    <span>Connect Professionally</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 bg-white dark:bg-navy-800/50 relative border-y border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-brand-blue font-semibold text-sm uppercase tracking-wider">Introduction</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-navy-900 dark:text-white">
+                    About Me
+                </h2>
+                <div class="w-16 h-1 bg-brand-blue mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-gray-600 dark:text-gray-300 leading-relaxed text-base">
+                    <p class="text-lg text-gray-800 dark:text-gray-200 font-medium">
+                        Welcome! I am <strong class="text-navy-900 dark:text-white font-semibold">Abdia Hassan Tonmoy</strong>, an ambitious and driven BBA Honours student specializing in Management from Bangladesh.
+                    </p>
+                    <p>
+                        My academic journey and professional exposure have molded me into a focused professional passionate about modern business management, reporting accuracy, financial data management, and computer-driven efficiency. I thrive at the intersection of traditional business operations and modern digital tools.
+                    </p>
+                    <p>
+                        With dedicated hands-on experience in computer applications, Microsoft Excel automated reporting, and office administrative workflows, I am committed to creating structured spreadsheets and efficient reporting solutions that help organizations make clear, data-informed decisions.
+                    </p>
+
+                    <!-- Core Strengths Pills -->
+                    <div class="pt-4 flex flex-wrap gap-2">
+                        <span class="px-3.5 py-1.5 rounded-lg bg-gray-100 dark:bg-navy-900 text-xs font-semibold text-navy-900 dark:text-gray-200">Business Management</span>
+                        <span class="px-3.5 py-1.5 rounded-lg bg-gray-100 dark:bg-navy-900 text-xs font-semibold text-navy-900 dark:text-gray-200">Financial Reporting</span>
+                        <span class="px-3.5 py-1.5 rounded-lg bg-gray-100 dark:bg-navy-900 text-xs font-semibold text-navy-900 dark:text-gray-200">Excel Automation</span>
+                        <span class="px-3.5 py-1.5 rounded-lg bg-gray-100 dark:bg-navy-900 text-xs font-semibold text-navy-900 dark:text-gray-200">Process Optimization</span>
+                        <span class="px-3.5 py-1.5 rounded-lg bg-gray-100 dark:bg-navy-900 text-xs font-semibold text-navy-900 dark:text-gray-200">Data Analytics</span>
+                    </div>
+                </div>
+
+                <!-- Highlights Grid -->
+                <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    
+                    <div class="p-6 rounded-2xl bg-gray-50 dark:bg-navy-900 border border-gray-100 dark:border-gray-800 space-y-3 hover:border-brand-blue transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-brand-blue flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-navy-900 dark:text-white">Management Focus</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Pursuing BBA Honours in Management with a deep understanding of organizational workflows.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-gray-50 dark:bg-navy-900 border border-gray-100 dark:border-gray-800 space-y-3 hover:border-brand-blue transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-table"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-navy-900 dark:text-white">Spreadsheet Mastery</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Specialized in automated dashboards, formulas, functions, and structured data handling.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-gray-50 dark:bg-navy-900 border border-gray-100 dark:border-gray-800 space-y-3 hover:border-brand-blue transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-navy-900 dark:text-white">Digital Solutions</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Creating practical tech tools for accounting, inventory tracking, and records management.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-gray-50 dark:bg-navy-900 border border-gray-100 dark:border-gray-800 space-y-3 hover:border-brand-blue transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-earth-asia"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-navy-900 dark:text-white">Location</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Based in Bangladesh, ready to work locally and support remote international requirements.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gray-50 dark:bg-navy-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-brand-blue font-semibold text-sm uppercase tracking-wider">Academic Record</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-navy-900 dark:text-white">
+                    Education
+                </h2>
+                <div class="w-16 h-1 bg-brand-blue mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Vertical Timeline -->
+            <div class="max-w-4xl mx-auto relative">
+                <!-- Vertical Line -->
+                <div class="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-800 -translate-x-1/2"></div>
+
+                <div class="space-y-12">
+                    
+                    <!-- Item 1: BBA Honours -->
+                    <div class="relative flex flex-col sm:flex-row items-start sm:items-center group">
+                        
+                        <!-- Timeline Node -->
+                        <div class="absolute left-4 sm:left-1/2 -translate-x-1/2 z-10 w-9 h-9 rounded-full bg-brand-blue text-white flex items-center justify-center ring-8 ring-gray-50 dark:ring-navy-900 font-bold shadow-md">
+                            <i class="fa-solid fa-graduation-cap text-sm"></i>
+                        </div>
+
+                        <!-- Left Content (Desktop) -->
+                        <div class="w-full sm:w-1/2 pl-12 sm:pl-0 sm:pr-12 text-left sm:text-right">
+                            <div class="p-6 rounded-2xl bg-white dark:bg-navy-800 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow">
+                                <span class="px-3 py-1 rounded-full bg-brand-blue/10 text-brand-blue text-xs font-semibold">Current Academic Pursuit</span>
+                                <h3 class="text-xl font-heading font-bold text-navy-900 dark:text-white mt-2">
+                                    BBA Honours in Management
+                                </h3>
+                                <p class="text-sm font-medium text-gray-500 dark:text-gray-400 mt-1">
+                                    Higher Education — Bangladesh
+                                </p>
+                                <p class="text-xs text-gray-600 dark:text-gray-300 mt-3 leading-relaxed">
+                                    Focusing on organizational behavior, strategic business management, financial accounting, reporting systems, and administrative leadership.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Spacer for Right Side -->
+                        <div class="hidden sm:block w-1/2"></div>
+                    </div>
+
+                    <!-- Item 2: HSC -->
+                    <div class="relative flex flex-col sm:flex-row items-start sm:items-center group">
+                        
+                        <!-- Timeline Node -->
+                        <div class="absolute left-4 sm:left-1/2 -translate-x-1/2 z-10 w-9 h-9 rounded-full bg-navy-800 dark:bg-gray-700 text-brand-accent flex items-center justify-center ring-8 ring-gray-50 dark:ring-navy-900 font-bold shadow-md">
+                            <i class="fa-solid fa-award text-sm"></i>
+                        </div>
+
+                        <!-- Spacer for Left Side -->
+                        <div class="hidden sm:block w-1/2"></div>
+
+                        <!-- Right Content -->
+                        <div class="w-full sm:w-1/2 pl-12 sm:pl-12 text-left">
+                            <div class="p-6 rounded-2xl bg-white dark:bg-navy-800 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow">
+                                <div class="flex items-center justify-between flex-wrap gap-2">
+                                    <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-semibold">Higher Secondary Certificate</span>
+                                    <span class="font-heading font-bold text-brand-blue text-sm">GPA 4.27</span>
+                                </div>
+                                <h3 class="text-xl font-heading font-bold text-navy-900 dark:text-white mt-2">
+                                    HSC (Higher Secondary Certificate)
+                                </h3>
+                                <p class="text-sm font-medium text-gray-500 dark:text-gray-400 mt-1">
+                                    Business Studies / General Studies
+                                </p>
+                                <p class="text-xs text-gray-600 dark:text-gray-300 mt-3 leading-relaxed">
+                                    Successfully achieved high academic standing with an emphasis on analytical skills and business principles.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: SSC -->
+                    <div class="relative flex flex-col sm:flex-row items-start sm:items-center group">
+                        
+                        <!-- Timeline Node -->
+                        <div class="absolute left-4 sm:left-1/2 -translate-x-1/2 z-10 w-9 h-9 rounded-full bg-navy-800 dark:bg-gray-700 text-brand-accent flex items-center justify-center ring-8 ring-gray-50 dark:ring-navy-900 font-bold shadow-md">
+                            <i class="fa-solid fa-school text-sm"></i>
+                        </div>
+
+                        <!-- Left Content -->
+                        <div class="w-full sm:w-1/2 pl-12 sm:pl-0 sm:pr-12 text-left sm:text-right">
+                            <div class="p-6 rounded-2xl bg-white dark:bg-navy-800 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow">
+                                <div class="flex items-center justify-between sm:justify-end gap-3 flex-wrap">
+                                    <span class="px-3 py-1 rounded-full bg-blue-500/10 text-brand-blue text-xs font-semibold">Secondary School Certificate</span>
+                                    <span class="font-heading font-bold text-brand-blue text-sm">GPA 3.83</span>
+                                </div>
+                                <h3 class="text-xl font-heading font-bold text-navy-900 dark:text-white mt-2">
+                                    SSC (Secondary School Certificate)
+                                </h3>
+                                <p class="text-sm font-medium text-gray-500 dark:text-gray-400 mt-1">
+                                    General Education Curriculum
+                                </p>
+                                <p class="text-xs text-gray-600 dark:text-gray-300 mt-3 leading-relaxed">
+                                    Built a strong foundation in core academic subjects, computer fundamentals, and mathematics.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Spacer for Right Side -->
+                        <div class="hidden sm:block w-1/2"></div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Professional Skills Section -->
+    <section id="skills" class="py-20 bg-white dark:bg-navy-800/50 relative border-t border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-brand-blue font-semibold text-sm uppercase tracking-wider">Capabilities & Expertise</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-navy-900 dark:text-white">
+                    Professional Skills
+                </h2>
+                <div class="w-16 h-1 bg-brand-blue mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Featured Excel Highlight Box -->
+            <div class="mb-12 p-8 rounded-3xl bg-gradient-to-br from-emerald-900/10 via-emerald-500/5 to-transparent border border-emerald-500/20 dark:bg-navy-900 shadow-lg relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 opacity-10 text-emerald-600 pointer-events-none">
+                    <i class="fa-solid fa-file-excel text-9xl"></i>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                    <div class="lg:col-span-4 space-y-3">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                            <i class="fa-solid fa-star"></i> Featured Core Skill
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold text-navy-900 dark:text-white flex items-center gap-3">
+                            <i class="fa-solid fa-file-excel text-emerald-500 text-3xl"></i>
+                            Microsoft Excel Expertise
+                        </h3>
+                        <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                            Comprehensive practical experience in designing automated spreadsheet workflows, handling complex formulas, and presenting actionable business intelligence.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                        <div class="p-4 rounded-xl bg-white dark:bg-navy-800 shadow-sm border border-emerald-500/20 text-center space-y-1 hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-calculator text-emerald-500 text-lg"></i>
+                            <h4 class="text-xs font-bold text-navy-900 dark:text-white">Formulas & Functions</h4>
+                            <p class="text-[10px] text-gray-500 dark:text-gray-400">VLOOKUP, INDEX/MATCH, Logical</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white dark:bg-navy-800 shadow-sm border border-emerald-500/20 text-center space-y-1 hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-layer-group text-emerald-500 text-lg"></i>
+                            <h4 class="text-xs font-bold text-navy-900 dark:text-white">Data Organization</h4>
+                            <p class="text-[10px] text-gray-500 dark:text-gray-400">Sorting, Filtering, Structuring</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white dark:bg-navy-800 shadow-sm border border-emerald-500/20 text-center space-y-1 hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-chart-column text-emerald-500 text-lg"></i>
+                            <h4 class="text-xs font-bold text-navy-900 dark:text-white">Reports & Dashboards</h4>
+                            <p class="text-[10px] text-gray-500 dark:text-gray-400">Pivot Tables & Charts</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white dark:bg-navy-800 shadow-sm border border-emerald-500/20 text-center space-y-1 hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-database text-emerald-500 text-lg"></i>
+                            <h4 class="text-xs font-bold text-navy-900 dark:text-white">Data Management</h4>
+                            <p class="text-[10px] text-gray-500 dark:text-gray-400">Validation & Accuracy</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white dark:bg-navy-800 shadow-sm border border-emerald-500/20 text-center space-y-1 hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-gears text-emerald-500 text-lg"></i>
+                            <h4 class="text-xs font-bold text-navy-900 dark:text-white">Automated Sheets</h4>
+                            <p class="text-[10px] text-gray-500 dark:text-gray-400">Dynamic Calculation Templates</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white dark:bg-navy-800 shadow-sm border border-emerald-500/20 text-center space-y-1 hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-shield-halved text-emerald-500 text-lg"></i>
+                            <h4 class="text-xs font-bold text-navy-900 dark:text-white">Record Protection</h4>
+                            <p class="text-[10px] text-gray-500 dark:text-gray-400">Sheet Permissions & Audit</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Skill Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Microsoft Word -->
+                <div class="p-6 rounded-2xl bg-gray-50 dark:bg-navy-900 border border-gray-100 dark:border-gray-800 hover:border-brand-blue hover:shadow-lg transition-all duration-300 space-y-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-file-word"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-lg text-navy-900 dark:text-white">Microsoft Word</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Professional document creation, formatting, official letters, report design & layout structuring.</p>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-1.5">
+                        <div class="bg-blue-600 h-1.5 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+
+                <!-- Microsoft PowerPoint -->
+                <div class="p-6 rounded-2xl bg-gray-50 dark:bg-navy-900 border border-gray-100 dark:border-gray-800 hover:border-brand-blue hover:shadow-lg transition-all duration-300 space-y-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 text-orange-600 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-file-powerpoint"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-lg text-navy-900 dark:text-white">Microsoft PowerPoint</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Engaging business presentations, slide design, visual data graphics, and executive pitch decks.</p>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-1.5">
+                        <div class="bg-orange-500 h-1.5 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <!-- Computer Applications -->
+                <div class="p-6 rounded-2xl bg-gray-50 dark:bg-navy-900 border border-gray-100 dark:border-gray-800 hover:border-brand-blue hover:shadow-lg transition-all duration-300 space-y-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-600 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-desktop"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-lg text-navy-900 dark:text-white">Computer Applications</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">General computing literacy, software troubleshooting, internet research, and cloud office tools.</p>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-1.5">
+                        <div class="bg-indigo-600 h-1.5 rounded-full" style="width: 92%"></div>
+                    </div>
+                </div>
+
+                <!-- Excel Reporting -->
+                <div class="p-6 rounded-2xl bg-gray-50 dark:bg-navy-900 border border-gray-100 dark:border-gray-800 hover:border-brand-blue hover:shadow-lg transition-all duration-300 space-y-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-lg text-navy-900 dark:text-white">Excel Reporting</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Monthly, quarterly, and date-wise performance summaries with clear analytical highlights.</p>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-1.5">
+                        <div class="bg-emerald-600 h-1.5 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <!-- Data Management -->
+                <div class="p-6 rounded-2xl bg-gray-50 dark:bg-navy-900 border border-gray-100 dark:border-gray-800 hover:border-brand-blue hover:shadow-lg transition-all duration-300 space-y-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-600 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-lg text-navy-900 dark:text-white">Data Management</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Data integrity, record cleanup, cataloging, archive management, and error minimization.</p>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-1.5">
+                        <div class="bg-cyan-600 h-1.5 rounded-full" style="width: 88%"></div>
+                    </div>
+                </div>
+
+                <!-- Spreadsheet Development -->
+                <div class="p-6 rounded-2xl bg-gray-50 dark:bg-navy-900 border border-gray-100 dark:border-gray-800 hover:border-brand-blue hover:shadow-lg transition-all duration-300 space-y-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-600 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-table-cells"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-lg text-navy-900 dark:text-white">Spreadsheet Development</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Custom formula architecture, layout design, data validation rules, and input automation.</p>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-1.5">
+                        <div class="bg-purple-600 h-1.5 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+
+                <!-- Business Reporting -->
+                <div class="p-6 rounded-2xl bg-gray-50 dark:bg-navy-900 border border-gray-100 dark:border-gray-800 hover:border-brand-blue hover:shadow-lg transition-all duration-300 space-y-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-lg text-navy-900 dark:text-white">Business Reporting</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Translating complex operational stats into concise summaries for managerial evaluation.</p>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-1.5">
+                        <div class="bg-amber-500 h-1.5 rounded-full" style="width: 86%"></div>
+                    </div>
+                </div>
+
+                <!-- Basic Digital Solutions -->
+                <div class="p-6 rounded-2xl bg-gray-50 dark:bg-navy-900 border border-gray-100 dark:border-gray-800 hover:border-brand-blue hover:shadow-lg transition-all duration-300 space-y-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-600 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-lg text-navy-900 dark:text-white">Basic Digital Solutions</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Leveraging modern digital software & web platforms to optimize daily workflow productivity.</p>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-1.5">
+                        <div class="bg-rose-500 h-1.5 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50 dark:bg-navy-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-brand-blue font-semibold text-sm uppercase tracking-wider">Professional Journey</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-navy-900 dark:text-white">
+                    Work Experience
+                </h2>
+                <div class="w-16 h-1 bg-brand-blue mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Single Featured Experience Card -->
+            <div class="max-w-4xl mx-auto bg-white dark:bg-navy-800 rounded-3xl p-8 sm:p-10 shadow-lg border border-gray-100 dark:border-gray-700 space-y-8 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-brand-blue/5 rounded-bl-full pointer-events-none"></div>
+
+                <!-- Header Block -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-gray-100 dark:border-gray-700">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-14 h-14 rounded-2xl bg-navy-800 text-brand-accent flex items-center justify-center text-2xl font-bold shadow-md">
+                            <i class="fa-solid fa-tooth"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-heading font-bold text-navy-900 dark:text-white">
+                                Senior Officer
+                            </h3>
+                            <p class="text-sm font-semibold text-brand-blue dark:text-brand-accent">
+                                Accounting Department — FNF Dental Care
+                            </p>
+                        </div>
+                    </div>
+                    <span class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-brand-blue/10 text-brand-blue text-xs font-bold uppercase tracking-wider self-start sm:self-center">
+                        <i class="fa-solid fa-briefcase text-xs"></i>
+                        <span>Practical Role</span>
+                    </span>
+                </div>
+
+                <!-- Responsibilities Bullets -->
+                <div class="space-y-4">
+                    <h4 class="text-sm font-heading font-bold text-gray-800 dark:text-gray-200 uppercase tracking-wider">
+                        Key Responsibilities & Professional Scope:
+                    </h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600 dark:text-gray-300">
+                        
+                        <div class="p-4 rounded-xl bg-gray-50 dark:bg-navy-900/60 flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-brand-blue mt-1"></i>
+                            <div>
+                                <strong class="text-navy-900 dark:text-white block font-semibold mb-0.5">Accounting Operations</strong>
+                                Managed daily account balance logs, transaction audits, and baseline financial processing.
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-gray-50 dark:bg-navy-900/60 flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-brand-blue mt-1"></i>
+                            <div>
+                                <strong class="text-navy-900 dark:text-white block font-semibold mb-0.5">Computer-Based Office Administration</strong>
+                                Conducted computerized administration tasks, digital document preparation, and office communications.
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-gray-50 dark:bg-navy-900/60 flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-brand-blue mt-1"></i>
+                            <div>
+                                <strong class="text-navy-900 dark:text-white block font-semibold mb-0.5">Data & Record Management</strong>
+                                Maintained confidential patient payment ledger archives and clinic operational logs.
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-gray-50 dark:bg-navy-900/60 flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-brand-blue mt-1"></i>
+                            <div>
+                                <strong class="text-navy-900 dark:text-white block font-semibold mb-0.5">Periodic Reporting & Analytics</strong>
+                                Developed periodic income summaries and operational updates for management evaluation.
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-gray-50 dark:bg-navy-900/60 flex items-start space-x-3 md:col-span-2">
+                            <i class="fa-solid fa-circle-check text-brand-blue mt-1"></i>
+                            <div>
+                                <strong class="text-navy-900 dark:text-white block font-semibold mb-0.5">Excel & Office Application Workflows</strong>
+                                Utilized advanced Microsoft Excel formulas to automate patient ledger tracking and standardize reporting sheets.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- My Projects Section -->
+    <section id="projects" class="py-20 bg-white dark:bg-navy-800/50 relative border-y border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-brand-blue font-semibold text-sm uppercase tracking-wider">Spreadsheet & Digital Systems</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-navy-900 dark:text-white">
+                    Featured Projects
+                </h2>
+                <div class="w-16 h-1 bg-brand-blue mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1: Dental Patient Management System -->
+                <div class="bg-gray-50 dark:bg-navy-900 rounded-3xl p-6 border border-gray-100 dark:border-gray-800 hover:border-brand-blue hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-teal-500/10 text-teal-600 dark:text-teal-400 flex items-center justify-center text-2xl font-bold group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-hospital-user"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold text-teal-600 dark:text-teal-400 uppercase tracking-wider">Spreadsheet & Accounting</span>
+                            <h3 class="text-xl font-heading font-bold text-navy-900 dark:text-white mt-1">
+                                Dental Patient Management System
+                            </h3>
+                        </div>
+                        <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                            A comprehensive Excel-based system engineered to log patient info, track medical procedures, monitor payments, and schedule pending treatments effortlessly.
+                        </p>
+                        
+                        <div class="pt-2 flex flex-wrap gap-1.5">
+                            <span class="px-2.5 py-1 rounded-md bg-white dark:bg-navy-800 text-[10px] font-semibold text-gray-600 dark:text-gray-300">Patient Information</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white dark:bg-navy-800 text-[10px] font-semibold text-gray-600 dark:text-gray-300">Treatment Records</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white dark:bg-navy-800 text-[10px] font-semibold text-gray-600 dark:text-gray-300">Payment Tracking</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 mt-6 border-t border-gray-200 dark:border-gray-800">
+                        <button onclick="openProjectModal('dental')" class="w-full py-2.5 px-4 rounded-xl bg-navy-800 hover:bg-brand-blue text-white text-xs font-semibold transition-colors flex items-center justify-center space-x-2">
+                            <span>View Project Details</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2: Garments Inventory Management System -->
+                <div class="bg-gray-50 dark:bg-navy-900 rounded-3xl p-6 border border-gray-100 dark:border-gray-800 hover:border-brand-blue hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-2xl font-bold group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-boxes-packing"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">Supply Chain & Inventory</span>
+                            <h3 class="text-xl font-heading font-bold text-navy-900 dark:text-white mt-1">
+                                Garments Inventory Management System
+                            </h3>
+                        </div>
+                        <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                            Robust inventory tool designed to manage product stock quantities, track warehouse storage locations, monitor stock transfers, and produce date-wise monthly reports.
+                        </p>
+                        
+                        <div class="pt-2 flex flex-wrap gap-1.5">
+                            <span class="px-2.5 py-1 rounded-md bg-white dark:bg-navy-800 text-[10px] font-semibold text-gray-600 dark:text-gray-300">Product Tracking</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white dark:bg-navy-800 text-[10px] font-semibold text-gray-600 dark:text-gray-300">Stock Transfers</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white dark:bg-navy-800 text-[10px] font-semibold text-gray-600 dark:text-gray-300">Monthly Dashboard</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 mt-6 border-t border-gray-200 dark:border-gray-800">
+                        <button onclick="openProjectModal('garments')" class="w-full py-2.5 px-4 rounded-xl bg-navy-800 hover:bg-brand-blue text-white text-xs font-semibold transition-colors flex items-center justify-center space-x-2">
+                            <span>View Project Details</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3: Excel Business Reporting Solutions -->
+                <div class="bg-gray-50 dark:bg-navy-900 rounded-3xl p-6 border border-gray-100 dark:border-gray-800 hover:border-brand-blue hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl font-bold group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">Business Analytics</span>
+                            <h3 class="text-xl font-heading font-bold text-navy-900 dark:text-white mt-1">
+                                Excel Business Reporting Solutions
+                            </h3>
+                        </div>
+                        <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                            Custom dynamic reporting templates featuring automated data entry forms, interactive KPI dashboards, and structured database management for commercial decision-making.
+                        </p>
+                        
+                        <div class="pt-2 flex flex-wrap gap-1.5">
+                            <span class="px-2.5 py-1 rounded-md bg-white dark:bg-navy-800 text-[10px] font-semibold text-gray-600 dark:text-gray-300">Automated Reports</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white dark:bg-navy-800 text-[10px] font-semibold text-gray-600 dark:text-gray-300">Dynamic Dashboards</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white dark:bg-navy-800 text-[10px] font-semibold text-gray-600 dark:text-gray-300">Data Entry Systems</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 mt-6 border-t border-gray-200 dark:border-gray-800">
+                        <button onclick="openProjectModal('reporting')" class="w-full py-2.5 px-4 rounded-xl bg-navy-800 hover:bg-brand-blue text-white text-xs font-semibold transition-colors flex items-center justify-center space-x-2">
+                            <span>View Project Details</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Career Goal Section -->
+    <section class="py-20 bg-gray-50 dark:bg-navy-900 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="relative bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 text-white rounded-3xl p-8 sm:p-12 shadow-2xl overflow-hidden text-center space-y-6">
+                <!-- Decorative Quote Marks -->
+                <i class="fa-solid fa-quote-left text-5xl text-brand-blue/30 absolute top-6 left-6"></i>
+                <i class="fa-solid fa-quote-right text-5xl text-brand-blue/30 absolute bottom-6 right-6"></i>
+
+                <span class="px-4 py-1.5 rounded-full bg-brand-blue/20 text-brand-accent text-xs font-bold uppercase tracking-widest inline-block">
+                    My Professional Vision
+                </span>
+
+                <h2 class="text-2xl sm:text-3xl font-heading font-bold text-white">
+                    Career Goal
+                </h2>
+
+                <p class="text-base sm:text-xl font-light text-gray-200 italic max-w-3xl mx-auto leading-relaxed">
+                    "My goal is to build a successful career in a professional organization where I can apply my management knowledge, Excel skills, reporting abilities, and practical experience while continuously learning and developing new skills."
+                </p>
+
+                <div class="pt-2 flex items-center justify-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-brand-blue flex items-center justify-center text-white font-bold">
+                        AT
+                    </div>
+                    <div class="text-left">
+                        <span class="block text-sm font-heading font-bold text-white">Abdia Hassan Tonmoy</span>
+                        <span class="block text-xs text-gray-400">Management Student & Reporting Specialist</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Why Work With Me Section -->
+    <section id="whyme" class="py-20 bg-white dark:bg-navy-800/50 relative border-t border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-brand-blue font-semibold text-sm uppercase tracking-wider">Professional Value</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-navy-900 dark:text-white">
+                    Why Work With Me
+                </h2>
+                <div class="w-16 h-1 bg-brand-blue mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="p-6 rounded-2xl bg-gray-50 dark:bg-navy-900 border border-gray-100 dark:border-gray-800 hover:border-brand-blue transition-all duration-300 space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-brand-blue flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-navy-900 dark:text-white">Quick Learner</h3>
+                    <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Adaptable and quick to master new digital applications, organizational tools, and office workflows efficiently.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-gray-50 dark:bg-navy-900 border border-gray-100 dark:border-gray-800 hover:border-brand-blue transition-all duration-300 space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-navy-900 dark:text-white">Responsible & Organized</h3>
+                    <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                        High sense of duty with strong organizational instincts ensuring records and reports are always accurate and timely.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-gray-50 dark:bg-navy-900 border border-gray-100 dark:border-gray-800 hover:border-brand-blue transition-all duration-300 space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-navy-900 dark:text-white">Tech & Business Interest</h3>
+                    <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Genuinely interested in combining core management strategy with modern tech applications to streamline business output.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-gray-50 dark:bg-navy-900 border border-gray-100 dark:border-gray-800 hover:border-brand-blue transition-all duration-300 space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-file-excel"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-navy-900 dark:text-white">Excel & Reporting Focus</h3>
+                    <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Strong dedication to crafting automated Excel spreadsheets, clear data visuals, and decision-ready dashboards.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-gray-50 dark:bg-navy-900 border border-gray-100 dark:border-gray-800 hover:border-brand-blue transition-all duration-300 space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-puzzle-piece"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-navy-900 dark:text-white">Practical Problem-Solver</h3>
+                    <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Focused on pragmatic solutions that simplify daily tasks and resolve operational record-keeping challenges.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-gray-50 dark:bg-navy-900 border border-gray-100 dark:border-gray-800 hover:border-brand-blue transition-all duration-300 space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-navy-900 dark:text-white">Professional Attitude</h3>
+                    <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Polite, continuous learner, open to constructive feedback, and committed to maintaining confidentiality and integrity.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-navy-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-brand-blue font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-navy-900 dark:text-white">
+                    Contact Me
+                </h2>
+                <div class="w-16 h-1 bg-brand-blue mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info Side -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-white dark:bg-navy-800 rounded-3xl p-8 shadow-md border border-gray-100 dark:border-gray-700 space-y-6">
+                        
+                        <h3 class="text-xl font-heading font-bold text-navy-900 dark:text-white">
+                            Contact Details
+                        </h3>
+                        <p class="text-xs text-gray-600 dark:text-gray-300">
+                            Feel free to reach out for professional inquiries, job opportunities, spreadsheet solutions, or collaborative projects.
+                        </p>
+
+                        <div class="space-y-4 pt-2">
+                            
+                            <!-- Email -->
+                            <div class="flex items-center space-x-4 p-3 rounded-2xl bg-gray-50 dark:bg-navy-900">
+                                <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center text-lg">
+                                    <i class="fa-regular fa-envelope"></i>
+                                </div>
+                                <div class="overflow-hidden">
+                                    <span class="text-[10px] font-bold uppercase text-gray-400 block">Email Address</span>
+                                    <a href="mailto:abdia.tonmoy@example.com" class="text-xs sm:text-sm font-semibold text-navy-900 dark:text-white hover:text-brand-blue truncate block">
+                                        abdia.tonmoy@example.com
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="flex items-center space-x-4 p-3 rounded-2xl bg-gray-50 dark:bg-navy-900">
+                                <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] font-bold uppercase text-gray-400 block">Phone / Mobile</span>
+                                    <a href="tel:+8801700000000" class="text-xs sm:text-sm font-semibold text-navy-900 dark:text-white hover:text-brand-blue block">
+                                        +880 1700-000000
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Location -->
+                            <div class="flex items-center space-x-4 p-3 rounded-2xl bg-gray-50 dark:bg-navy-900">
+                                <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] font-bold uppercase text-gray-400 block">Location</span>
+                                    <span class="text-xs sm:text-sm font-semibold text-navy-900 dark:text-white block">
+                                        Bangladesh
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Social Buttons -->
+                        <div class="pt-4 border-t border-gray-100 dark:border-gray-700 space-y-3">
+                            <span class="text-xs font-bold uppercase text-gray-400 block">Connect via Social Media</span>
+                            <div class="flex items-center space-x-3">
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center text-lg hover:scale-105 transition-transform" aria-label="LinkedIn Profile">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-blue-800 text-white flex items-center justify-center text-lg hover:scale-105 transition-transform" aria-label="Facebook Profile">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Contact Form Side -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white dark:bg-navy-800 rounded-3xl p-8 shadow-md border border-gray-100 dark:border-gray-700">
+                        
+                        <h3 class="text-xl font-heading font-bold text-navy-900 dark:text-white mb-6">
+                            Send a Message
+                        </h3>
+
+                        <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="userName" class="block text-xs font-bold uppercase text-gray-500 dark:text-gray-400 mb-1">Your Name</label>
+                                    <input type="text" id="userName" required placeholder="e.g. John Doe" class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-navy-900 border border-gray-200 dark:border-gray-700 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-blue">
+                                </div>
+                                <div>
+                                    <label for="userEmail" class="block text-xs font-bold uppercase text-gray-500 dark:text-gray-400 mb-1">Your Email</label>
+                                    <input type="email" id="userEmail" required placeholder="e.g. john@example.com" class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-navy-900 border border-gray-200 dark:border-gray-700 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-blue">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="subject" class="block text-xs font-bold uppercase text-gray-500 dark:text-gray-400 mb-1">Subject</label>
+                                <input type="text" id="subject" required placeholder="e.g. Excel Project / Job Opportunity" class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-navy-900 border border-gray-200 dark:border-gray-700 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-blue">
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-xs font-bold uppercase text-gray-500 dark:text-gray-400 mb-1">Message</label>
+                                <textarea id="message" rows="5" required placeholder="Write your message here..." class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-navy-900 border border-gray-200 dark:border-gray-700 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-blue resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-brand-blue hover:bg-blue-600 text-white font-semibold text-sm transition-all duration-300 shadow-lg shadow-brand-blue/20 hover:shadow-xl active:scale-95 flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Contact Me</span>
+                            </button>
+                        </form>
+
+                        <!-- Form Feedback Toast Container -->
+                        <div id="formToast" class="hidden mt-4 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-medium text-center">
+                            Thank you! Your message has been sent successfully. Abdia will get back to you shortly.
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Project Detail Modal -->
+    <div id="projectModal" class="fixed inset-0 z-50 hidden bg-navy-900/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-navy-800 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-gray-100 dark:border-gray-700 relative max-h-[90vh] overflow-y-auto">
+            
+            <!-- Close Button -->
+            <button onclick="closeProjectModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-gray-100 dark:bg-navy-900 text-gray-600 dark:text-gray-300 hover:text-rose-500 flex items-center justify-center text-sm font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div id="modalContent" class="space-y-6">
+                <!-- Content inserted dynamically by JS -->
+            </div>
+            
+            <div class="pt-4 border-t border-gray-100 dark:border-gray-700 flex justify-end">
+                <button onclick="closeProjectModal()" class="px-5 py-2.5 rounded-xl bg-gray-200 dark:bg-navy-900 text-gray-800 dark:text-gray-200 text-xs font-bold hover:bg-brand-blue hover:text-white transition-colors">
+                    Close Window
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 text-white py-12 border-t border-gray-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            
+            <div class="flex items-center justify-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-blue to-brand-accent flex items-center justify-center text-white font-bold text-sm">
+                    AT
+                </div>
+                <span class="font-heading font-bold text-lg text-white">Abdia Hassan Tonmoy</span>
+            </div>
+
+            <p class="text-xs text-gray-400 max-w-md mx-auto">
+                BBA Honours Student in Management | Practical Computer & Excel Reporting Specialist based in Bangladesh.
+            </p>
+
+            <div class="text-xs text-gray-500 pt-4 border-t border-gray-800">
+                © 2026 Abdia Hassan Tonmoy. All Rights Reserved.
+            </div>
+
+        </div>
+
+        <!-- Floating Back to Top Button -->
+        <button id="backToTop" aria-label="Back to top" onclick="scrollToTop()" class="fixed bottom-6 right-6 w-11 h-11 rounded-2xl bg-brand-blue text-white shadow-xl hover:bg-blue-600 transition-all duration-300 flex items-center justify-center opacity-0 pointer-events-none z-40">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <script>
+        // Theme Toggle Logic
+        const html = document.documentElement;
+        const themeToggle = document.getElementById('themeToggle');
+        const themeToggleMobile = document.getElementById('themeToggleMobile');
+
+        function toggleTheme() {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Apply saved theme or system preference
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+
+        themeToggle?.addEventListener('click', toggleTheme);
+        themeToggleMobile?.addEventListener('click', toggleTheme);
+
+        // Mobile Navigation Drawer Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        // Close Mobile Nav when link clicked
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Back to Top Button Visibility
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                backToTopBtn.classList.add('opacity-100');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                backToTopBtn.classList.remove('opacity-100');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Contact Form Processing
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const toast = document.getElementById('formToast');
+            toast.classList.remove('hidden');
+            document.getElementById('contactForm').reset();
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 6000);
+        }
+
+        // Project Modal Content Generator
+        const projectData = {
+            dental: {
+                title: "Dental Patient Management System",
+                category: "Spreadsheet & Clinic Accounting",
+                icon: "fa-hospital-user",
+                color: "text-teal-500",
+                description: "A tailored database and spreadsheet system developed during work at FNF Dental Care to digitalize patient management and streamline operational accounting.",
+                features: [
+                    "Comprehensive Patient Information Management",
+                    "Detailed Procedure & Treatment Records Logging",
+                    "Real-time Payment and Pending Amount Tracking",
+                    "Scheduled Next-Treatment & Work Appointment Lists",
+                    "Searchable Historic Patient Ledger Records"
+                ],
+                impact: "Reduced operational reporting time by 40% and eliminated discrepancies in patient payment logging."
+            },
+            garments: {
+                title: "Garments Inventory Management System",
+                category: "Supply Chain & Warehouse Tracking",
+                icon: "fa-boxes-packing",
+                color: "text-indigo-500",
+                description: "An advanced spreadsheet system built for garments stock tracking, stock level alerts, location management, and monthly performance reporting.",
+                features: [
+                    "Product & SKU Item Tracking",
+                    "Real-time Available Stock Quantity Logging",
+                    "Storage Bay & Warehouse Location Tracking",
+                    "Inter-departmental Stock Transfer Logs",
+                    "Date-wise Automated Daily/Monthly Reports",
+                    "Excel Dashboard with Visual Stock Level Indicators"
+                ],
+                impact: "Enhanced stock audit accuracy and streamlined inventory transfer documentation."
+            },
+            reporting: {
+                title: "Excel Business Reporting Solutions",
+                category: "Business Analytics & Dashboards",
+                icon: "fa-chart-pie",
+                color: "text-emerald-500",
+                description: "A series of automated spreadsheet templates created to simplify raw data entry and output clean management summary reports.",
+                features: [
+                    "Automated Dynamic Calculation Reports",
+                    "User-friendly Form-like Data Entry Layouts",
+                    "Interactive KPI Charts & Pivot Dashboards",
+                    "Structured Commercial Data Management",
+                    "Built-in Data Validation and Error Check Rules"
+                ],
+                impact: "Helps management make faster, data-backed decisions through standardized reports."
+            }
+        };
+
+        function openProjectModal(key) {
+            const project = projectData[key];
+            if (!project) return;
+
+            const content = document.getElementById('modalContent');
+            content.innerHTML = `
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-2xl bg-gray-100 dark:bg-navy-900 ${project.color} flex items-center justify-center text-2xl">
+                        <i class="fa-solid ${project.icon}"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-brand-blue uppercase tracking-wider">${project.category}</span>
+                        <h3 class="text-xl font-heading font-bold text-navy-900 dark:text-white">${project.title}</h3>
+                    </div>
+                </div>
+
+                <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                    ${project.description}
+                </p>
+
+                <div class="space-y-3">
+                    <h4 class="text-xs font-bold uppercase text-gray-500 dark:text-gray-400">Key Features Included:</h4>
+                    <ul class="space-y-2">
+                        ${project.features.map(f => `
+                            <li class="flex items-start space-x-2 text-xs sm:text-sm text-gray-700 dark:text-gray-200">
+                                <i class="fa-solid fa-circle-check text-brand-blue mt-0.5"></i>
+                                <span>${f}</span>
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+
+                <div class="p-4 rounded-xl bg-brand-blue/10 border border-brand-blue/20">
+                    <h4 class="text-xs font-bold text-brand-blue uppercase mb-1">Impact & Objective</h4>
+                    <p class="text-xs text-gray-700 dark:text-gray-300">${project.impact}</p>
+                </div>
+            `;
+
+            document.getElementById('projectModal').classList.remove('hidden');
+        }
+
+        function closeProjectModal() {
+            document.getElementById('projectModal').classList.add('hidden');
+        }
+
+        // Close Modal on backdrop click
+        document.getElementById('projectModal').addEventListener('click', (e) => {
+            if (e.target.id === 'projectModal') {
+                closeProjectModal();
+            }
+        });
+    </script>
+</body>
+</html>
